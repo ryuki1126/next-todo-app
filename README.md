@@ -47,3 +47,12 @@ npm run dev
 ### 6. ブラウザでアクセスする
 
 [http://localhost:3000](http://localhost:3000)
+
+
+### 7. データベースのテーブルをWebで確認する
+
+```bash
+npx prisma studio
+```
+
+[http://localhost:5555](http://localhost:5555)
