@@ -9,9 +9,16 @@ generator client {
 
 model Todo {
   id    Int     @id @default(autoincrement())
+  /// @zod.string.min(1, { message: "タイトルは1文字以上入力してください" })
   title String
   is_done  Boolean @default(false)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }
 
+generator zod {
+  provider          = "zod-prisma-types"
+  useMultipleFiles  = true
+  writeBarrelFiles  = false
+  useTypeAssertions = true
+}
